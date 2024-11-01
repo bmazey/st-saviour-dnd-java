@@ -1,7 +1,8 @@
 public class Ascii {
     
     public static void drawD20(int value) {
-       String d20 = String.format("            ,:::,\r\n" + //
+        if(value > 9) {
+            String d20 = String.format("            ,:::,\r\n" + //
                       "       ,,,:;  :  ;:,,, \r\n" + //
                       "   ,,,:       :       :,,, \r\n" + //
                       ",,;...........:...........;,,\r\n" + //
@@ -17,7 +18,28 @@ public class Ascii {
                       "   ''';    ;     ;    ;'''         \r\n" + //
                       "       ''':;;   ;;:'''\r\n" + //
                       "            ':::'", value);
+                      
+            System.out.println(d20);
+        } else {
+            String d20 = String.format("            ,:::,\r\n" + //
+                      "       ,,,:;  :  ;:,,, \r\n" + //
+                      "   ,,,:       :       :,,, \r\n" + //
+                      ",,;...........:...........;,,\r\n" + //
+                      "; ;          ;';          ; ;\r\n" + //
+                      ";  ;        ;   ;        ;  ;\r\n" + //
+                      ";   ;      ;     ;      ;   ;\r\n" + //
+                      ";    ;    ;       ;    ;    ;\r\n" + //
+                      ";     ;  ;    %s    ;  ;     ;\r\n" + //
+                      ";      ;:...........:;      ;\r\n" + //
+                      ";     , ;           ; ,     ;\r\n" + //
+                      ";   ,'   ;         ;   ',   ;\r\n" + //
+                      "'';'      ;       ;      ';''\r\n" + //
+                      "   ''';    ;     ;    ;'''         \r\n" + //
+                      "       ''':;;   ;;:'''\r\n" + //
+                      "            ':::'", value);
+
         System.out.println(d20);
+        }   
     }
 
     public static void drawD6(int value) {

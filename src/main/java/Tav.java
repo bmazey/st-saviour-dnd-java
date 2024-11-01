@@ -1,6 +1,5 @@
 
 public class Tav {
-
     // Character name.
     private String name;
 
@@ -14,6 +13,12 @@ public class Tav {
     private int charisma;
     private int intelligence;
     private int wisdom;
+
+    // Roll modifiers.
+    private boolean advantage;
+    private boolean disadvantage;
+    private boolean guidance;
+    private boolean bardicInspiration;
 
     // Constructor method.
     public Tav(String name, String role) {
@@ -38,9 +43,5 @@ public class Tav {
 
     public int constitutionSavingThrow() {
         return 0;
-    }
-
-    public void rolld20(String buff) {
-        
     }
 }
