@@ -9,7 +9,7 @@ public class Ascii {
                       ";  ;        ;   ;        ;  ;\r\n" + //
                       ";   ;      ;     ;      ;   ;\r\n" + //
                       ";    ;    ;       ;    ;    ;\r\n" + //
-                      ";     ;  ;    %s   ;  ;     ;\r\n" + //
+                      ";     ;  ;   %s    ;  ;     ;\r\n" + //
                       ";      ;:...........:;      ;\r\n" + //
                       ";     , ;           ; ,     ;\r\n" + //
                       ";   ,'   ;         ;   ',   ;\r\n" + //
@@ -18,5 +18,20 @@ public class Ascii {
                       "       ''':;;   ;;:'''\r\n" + //
                       "            ':::'", value);
         System.out.println(d20);
+    }
+
+    public static void drawD4(int value) {
+        String d4 = String.format("          ;;\r\n" + //
+                        "        ,;  ;,\r\n" + //
+                        "       ,;    ;,\r\n" + //
+                        "      ,;      ;,\r\n" + //
+                        "     ,;        ;,\r\n" + //
+                        "    ,;          ;, \r\n" + //
+                        "   ,;     %s      ;,\r\n" + //
+                        "  ,;              ;,\r\n" + //
+                        " ,;                ;, \r\n" + //
+                        ",;                  ;,\r\n" + //
+                        "::::::::::::::::::::::", value);
+        System.out.println(d4);
     }
 }
