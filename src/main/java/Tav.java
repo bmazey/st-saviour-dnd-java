@@ -1,3 +1,4 @@
+import java.util.Random;
 
 public class Tav {
     // Character name.
@@ -17,31 +18,55 @@ public class Tav {
     // Roll modifiers.
     private boolean advantage;
     private boolean disadvantage;
-    private boolean guidance;
     private boolean bardicInspiration;
+    private boolean guidance;
 
     // Constructor method.
     public Tav(String name, String role) {
-        // Randomly generate stat array.
-        this.name = name;
-        this.role = role;
-    }
-
-    // Constructor method.
-    public Tav(String name, String role, int str, int dex, int con, int cha, int intel, int wis) {
-        // Ensure provided stats add up.
         this.name = name;
         this.role = role;
 
-        this.strength = str;
-        this.dexterity = dex;
-        this.constitution = con;
-        this.charisma = cha;
-        this.intelligence = intel;
-        this.wisdom = wis;
+        // Randomly assign stats from shuffled stat array.
+        int[] stats = new int[]{15, 14, 13, 12, 10, 8};
+        shuffle(stats);
+
+        this.strength     = stats[0];
+        this.dexterity    = stats[1];
+        this.constitution = stats[2];
+        this.charisma     = stats[3];
+        this.intelligence = stats[4];
+        this.wisdom       = stats[5];
     }
 
-    public int constitutionSavingThrow() {
+    public int statBonus(String stat) {
         return 0;
+    }
+
+    public int constitutionSavingThrow(int requirement) {
+        return 0;
+    }
+
+    public int rollD20() {
+        return (int)(Math.random() * 20) + 1;
+    }
+
+    public int rollD6() {
+        return (int)(Math.random() * 6) + 1;
+    }
+
+    public int rollD4() {
+        return (int)(Math.random() * 4) + 1;
+    }
+
+    // https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle
+    private void shuffle(int[] array) {
+        Random random = new Random();
+        for (int i = array.length - 1; i > 0; i--) {
+            int index = random.nextInt(i + 1);
+            // Swap elements
+            int temp = array[i];
+            array[i] = array[index];
+            array[index] = temp;
+        }
     }
 }

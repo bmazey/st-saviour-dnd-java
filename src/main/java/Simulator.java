@@ -1,4 +1,4 @@
-public class Roll {
+public class Simulator {
 
     public static void main(String[] args) {
         Ascii.drawD20(9);
