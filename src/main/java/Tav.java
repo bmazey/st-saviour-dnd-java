@@ -22,12 +22,12 @@ public class Tav {
         this.role = role;
     }
 
+    // Constructor method.
     public Tav(String name, String role, int str, int dex, int con, int cha, int intel, int wis) {
-        
+        // Ensure provided stats add up.
         this.name = name;
         this.role = role;
 
-        // Ensure provided stats add up.
         this.strength = str;
         this.dexterity = dex;
         this.constitution = con;
@@ -36,8 +36,8 @@ public class Tav {
         this.wisdom = wis;
     }
 
-    public void rolld20() {
-
+    public int constitutionSavingThrow() {
+        return 0;
     }
 
     public void rolld20(String buff) {
