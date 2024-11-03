@@ -38,7 +38,15 @@ public class Tav {
         this.wisdom       = stats[5];
     }
 
+    public void characterSheet() {
+        // Print character sheet!
+    }
+
     public int statBonus(String stat) {
+        return 0;
+    }
+
+    public int initiative() {
         return 0;
     }
 
