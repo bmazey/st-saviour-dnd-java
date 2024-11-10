@@ -38,8 +38,25 @@ public class Tav {
         this.wisdom       = stats[5];
     }
 
-    public void characterSheet() {
+    public void printCharacterSheet() {
         // Print character sheet!
+
+        // Emojis.
+        String fire = Character.toString(0x1F60E);
+        String sword = Character.toString(0x1FE0F);
+        System.out.println(Character.toString(0x1F60E));
+
+        System.out.println("======= " + fire + " BLUDGEONS & FLAGONS " + fire + " =======");
+        System.out.println("Name:   " + this.name);
+        System.out.println("Class:  " + this.role);
+        System.out.println("--------- " + sword + " CHARACTER STATS " + sword + " -------");
+        System.out.println("Strength        " + this.strength);
+        System.out.println("Dexterity       " + this.dexterity);
+        System.out.println("Constitution    " + this.constitution);
+        System.out.println("Charisma        " + this.charisma);
+        System.out.println("Intelligence    " + this.intelligence);
+        System.out.println("Wisdom          " + this.wisdom);
+        System.out.println("***********************************");
     }
 
     public int statBonus(String stat) {
@@ -71,6 +88,7 @@ public class Tav {
         Random random = new Random();
         for (int i = array.length - 1; i > 0; i--) {
             int index = random.nextInt(i + 1);
+            
             // Swap elements
             int temp = array[i];
             array[i] = array[index];
