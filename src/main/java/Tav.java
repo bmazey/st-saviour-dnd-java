@@ -52,7 +52,7 @@ public class Tav {
     }
 
     public int roll(String input) {
-        if (input.equals("A")) {
+        if (input.equals("a")) {
             int first = rollD20();
             Ascii.drawD20(first);
 
@@ -65,7 +65,7 @@ public class Tav {
                 return second;
             }
         }
-        if (input.equals("G")) {
+        if (input.equals("g")) {
             int roll = rollD20();
             int guidance = rollD6();
 

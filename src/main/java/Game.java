@@ -36,7 +36,7 @@ public class Game {
             // Generate a dungeon monster.
             int requirement = generateMonster();
 
-            printDramaticText("Press A for advantage, G for guidance, & Enter to roll:");
+            printDramaticText("Press 'a' for advantage, 'g' for guidance, & Enter to roll:");
 
             String buff = scanner.nextLine();
             int result = tav.roll(buff);
