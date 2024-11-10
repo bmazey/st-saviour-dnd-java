@@ -2,10 +2,10 @@ import java.util.Random;
 
 public class Tav {
     // Character name.
-    private String name;
+    public String name;
 
     // Character class.
-    private String role;
+    public String role;
 
     // Character stats.
     private int strength;
@@ -14,12 +14,6 @@ public class Tav {
     private int charisma;
     private int intelligence;
     private int wisdom;
-
-    // Roll modifiers.
-    private boolean advantage;
-    private boolean disadvantage;
-    private boolean bardicInspiration;
-    private boolean guidance;
 
     // Constructor method.
     public Tav(String name, String role) {
@@ -38,37 +32,51 @@ public class Tav {
         this.wisdom       = stats[5];
     }
 
+    // Print character sheet!
     public void printCharacterSheet() {
-        // Print character sheet!
-
         // Emojis.
-        String fire = Character.toString(0x1F60E);
-        String sword = Character.toString(0x1FE0F);
-        System.out.println(Character.toString(0x1F60E));
+        String fire = Character.toString(0x1F525);
+        String sword = Character.toString(0x2694);
 
         System.out.println("======= " + fire + " BLUDGEONS & FLAGONS " + fire + " =======");
         System.out.println("Name:   " + this.name);
-        System.out.println("Class:  " + this.role);
-        System.out.println("--------- " + sword + " CHARACTER STATS " + sword + " -------");
+        System.out.println("Role:   " + this.role);
+        System.out.println("---------- " + sword + " CHARACTER STATS " + sword + " ----------");
         System.out.println("Strength        " + this.strength);
         System.out.println("Dexterity       " + this.dexterity);
         System.out.println("Constitution    " + this.constitution);
         System.out.println("Charisma        " + this.charisma);
         System.out.println("Intelligence    " + this.intelligence);
         System.out.println("Wisdom          " + this.wisdom);
-        System.out.println("***********************************");
+        System.out.println("-----------------------------------------");
     }
 
-    public int statBonus(String stat) {
-        return 0;
-    }
+    public int roll(String input) {
+        if (input.equals("A")) {
+            int first = rollD20();
+            Ascii.drawD20(first);
 
-    public int initiative() {
-        return 0;
-    }
+            int second = rollD20();
+            Ascii.drawD20(second);
 
-    public int constitutionSavingThrow(int requirement) {
-        return 0;
+            if(first > second) {
+                return first;
+            } else {
+                return second;
+            }
+        }
+        if (input.equals("G")) {
+            int roll = rollD20();
+            int guidance = rollD6();
+
+            Ascii.drawD20(roll);
+            Ascii.drawD4(guidance);
+            return roll + guidance;
+        } else {
+            int roll = rollD20();
+            Ascii.drawD20(roll);
+            return roll;
+        }
     }
 
     public int rollD20() {
