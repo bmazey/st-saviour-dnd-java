@@ -42,6 +42,7 @@ public class Game {
             int result = tav.roll(buff);
 
             if(result == 20) {
+                wins++;
                 System.out.println();
                 printDramaticText("     CRITICAL SUCCESS");
                 System.out.println();
@@ -64,12 +65,11 @@ public class Game {
                 System.out.println();
                 alive = false;
             } else {
+                wins++;
                 System.out.println();
                 printDramaticText("You rolled " + result + ", you needed " + requirement + " ... well done!");
                 System.out.println();
             }
-
-            wins++;
 
             if(wins == 3) {
                 System.out.println("");
