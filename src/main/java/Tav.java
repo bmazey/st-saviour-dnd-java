@@ -7,6 +7,9 @@ public class Tav {
     // Character class.
     public String role;
 
+    // Character level.
+    public int level;
+
     // Character stats.
     private int strength;
     private int dexterity;
@@ -19,6 +22,7 @@ public class Tav {
     public Tav(String name, String role) {
         this.name = name;
         this.role = role;
+        this.level = 1;
 
         // Randomly assign stats from shuffled stat array.
         int[] stats = new int[]{15, 14, 13, 12, 10, 8};
@@ -41,6 +45,7 @@ public class Tav {
         System.out.println("======= " + fire + " BLUDGEONS & FLAGONS " + fire + " =======");
         System.out.println("Name:   " + this.name);
         System.out.println("Role:   " + this.role);
+        System.out.println("Level:  " + this.level);
         System.out.println("---------- " + sword + " CHARACTER STATS " + sword + " ----------");
         System.out.println("Strength        " + this.strength);
         System.out.println("Dexterity       " + this.dexterity);
