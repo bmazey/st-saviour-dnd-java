@@ -122,7 +122,7 @@ public class Game {
         }
         if(r == 6) {
             String eye = Character.toString(0x1F441);
-            System.out.println("+++++++++++ " + eye +  " EVIL BEHOLDER " + eye + "  +++++++++++");
+            System.out.println("+++++++++++ " + eye +  " EVIL BEHOLDER " + eye + " ++++++++++++");
             System.out.println("+                                        +");
             System.out.println("+           roll required:  18           +");
             System.out.println("+                                        +");
