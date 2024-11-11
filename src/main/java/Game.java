@@ -42,7 +42,6 @@ public class Game {
             int result = tav.roll(buff);
 
             if(result == 20) {
-                wins++;
                 System.out.println();
                 printDramaticText("     CRITICAL SUCCESS");
                 System.out.println();
@@ -71,7 +70,7 @@ public class Game {
                 System.out.println();
             }
 
-            if(wins == 3) {
+            if(wins >= 3) {
                 System.out.println("");
                 printDramaticText(tav.name + " the " + tav.role + " has completed the campaign!");
                 System.out.println();
@@ -113,7 +112,7 @@ public class Game {
         }
         if(r == 4 || r == 5) {
             String mask = Character.toString(0x1F3AD);
-            System.out.println("++++++++++ " + mask + " DISGUISED MIMIC " + mask + " ++++++++++");
+            System.out.println("++++++++++ " + mask + " DISGUISED MIMIC " + mask + " +++++++++");
             System.out.println("+                                        +");
             System.out.println("+           roll required:  12           +");
             System.out.println("+                                        +");
