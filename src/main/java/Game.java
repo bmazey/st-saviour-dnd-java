@@ -15,72 +15,26 @@ public class Game {
         // Collect character role from user.
         System.out.print("Role: ");
         String role = scanner.nextLine();
-        
-        // Create character by collecting user input (name + role)
-        Tav tav = new Tav(name, role);
 
-        // Print character sheet.
-        tav.printCharacterSheet();
+        System.out.println("Your name is " + name + " and your role is " + role + ".");
+        
+        // TODO Create character by collecting user input (name + role.
+
+        // TODO Print character sheet.
 
         // Start the adventure.
         printDramaticText("Our adventure begins in a shady tavern ...");
-        
-        int wins = 0;
-        boolean alive = true;
 
-        while(alive) {
-            // Start the encounter
-            System.out.println("");
-            printDramaticText("A monster approaches!");
+        // Roll a d20
+        System.out.print("Press Enter to roll a d20.");
+        scanner.nextLine();
 
-            // Generate a dungeon monster.
-            int requirement = generateMonster();
+        int roll = (int)(Math.random() * 20) + 1;
+        Ascii.drawD20(roll);
 
-            printDramaticText("Press 'a' for advantage, 'g' for guidance, & Enter to roll:");
-
-            String buff = scanner.nextLine();
-            int result = tav.roll(buff);
-
-            if(result == 20) {
-                System.out.println();
-                printDramaticText("     CRITICAL SUCCESS");
-                System.out.println();
-            }
-
-            if(result == 1) {
-                System.out.println();
-                printDramaticText("     CRITICAL FAILURE");
-                System.out.println();
-                printDramaticText("     G A M E   O V E R !");
-                System.out.println();
-                alive = false;
-            }
-
-            if(result < requirement) {
-                System.out.println();
-                printDramaticText("You rolled " + result + ", you needed " + requirement + " ...");
-                System.out.println();
-                printDramaticText("     G A M E   O V E R !");
-                System.out.println();
-                alive = false;
-            } else {
-                wins++;
-                System.out.println();
-                printDramaticText("You rolled " + result + ", you needed " + requirement + " ... well done!");
-                System.out.println();
-            }
-
-            if(wins >= 3) {
-                System.out.println("");
-                printDramaticText(tav.name + " the " + tav.role + " has completed the campaign!");
-                System.out.println();
-                printDramaticText("               {  fin  }");
-                System.out.println();
-                break;
-            }
-        } 
+        // TODO Continue ...
     }
-
+        
     public static void printDramaticText(String text) {
         // Delay in milliseconds
         int delay = 100;
