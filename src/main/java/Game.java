@@ -9,28 +9,34 @@ public class Game {
         Scanner scanner = new Scanner(System.in);
 
         // Collect character name from user.
-        System.out.print("Name: ");
-        String name = scanner.nextLine();
+        // System.out.print("Name: ");
+        // String name = scanner.nextLine();
 
         // Collect character role from user.
-        System.out.print("Role: ");
-        String role = scanner.nextLine();
+        // System.out.print("Role: ");
+        // String role = scanner.nextLine();
 
-        System.out.println("Your name is " + name + " and your role is " + role + ".");
+        Player player1 = new Player("Everett", "Wizard");
+        player1.attack();
+
+        Player player2 = new Player("Doraly", "Bard");
+        player2.attack();
+
+        // System.out.println("Your name is " + name + " and your role is " + role + ".");
         
-        // TODO Create character by collecting user input (name + role.
+        // TODO Create character by collecting user input (name + role).
 
         // TODO Print character sheet.
 
         // Start the adventure.
-        printDramaticText("Our adventure begins in a shady tavern ...");
+        // printDramaticText("Our adventure begins in a shady tavern ...");
 
         // Roll a d20
-        System.out.print("Press Enter to roll a d20.");
-        scanner.nextLine();
+        // System.out.print("Press Enter to roll a d20.");
+        // scanner.nextLine();
 
-        int roll = (int)(Math.random() * 20) + 1;
-        Ascii.drawD20(roll);
+        // int roll = (int)(Math.random() * 20) + 1;
+        // Ascii.drawD20(roll);
 
         // TODO Continue ...
     }
