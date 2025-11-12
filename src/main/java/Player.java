@@ -15,5 +15,24 @@ public class Player {
     public void attack() {
         System.out.println(this.name + " the " + this.role + " attacks!");
     }
+
+    public static int rollD20() {
+        int r = (int)(Math.random() * 20) + 1;
+        Ascii.drawD20(r);
+        return r;
+    }
+
+    public static int rollAdvantage() {
+        int first = (int)(Math.random() * 20) + 1;
+        Ascii.drawD20(first);
+        int second = (int)(Math.random() * 20) + 1;
+        Ascii.drawD20(second);
+        if(first > second) {
+            return first;
+        } else {
+            return second;
+        }
+    }
+
     
 }

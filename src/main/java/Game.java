@@ -9,25 +9,32 @@ public class Game {
         Scanner scanner = new Scanner(System.in);
 
         // Collect character name from user.
-        // System.out.print("Name: ");
-        // String name = scanner.nextLine();
+        System.out.print("Name: ");
+        String name = scanner.nextLine();
 
         // Collect character role from user.
-        // System.out.print("Role: ");
-        // String role = scanner.nextLine();
+        System.out.print("Role: ");
+        String role = scanner.nextLine();
 
-        Player player1 = new Player("Everett", "Wizard");
-        player1.attack();
+        Player player = new Player(name, role);
+        printDramaticText("Welcome " + player.name + " the " + player.role + " to Bludgeons & Flagons!");
+        printDramaticText("Our adventure begins in a shady tavern ...");
 
-        Player player2 = new Player("Doraly", "Bard");
-        player2.attack();
+        System.out.print("Press A to roll with advantage or press Enter to roll a D20. ");
+        String option = scanner.nextLine();
+        if(option.toLowerCase().equals("a")) {
+            int roll = Player.rollAdvantage();
+            printDramaticText(player.name + " rolled a " + roll + ".");
+        } else {
+            int roll = Player.rollD20();
+            printDramaticText(player.name + " rolled a " + roll + ".");
+        }
+
+        // Player player1 = new Player("Everett", "Wizard");
+        // player1.attack();
 
         // System.out.println("Your name is " + name + " and your role is " + role + ".");
         
-        // TODO Create character by collecting user input (name + role).
-
-        // TODO Print character sheet.
-
         // Start the adventure.
         // printDramaticText("Our adventure begins in a shady tavern ...");
 
@@ -35,7 +42,14 @@ public class Game {
         // System.out.print("Press Enter to roll a d20.");
         // scanner.nextLine();
 
-        // int roll = (int)(Math.random() * 20) + 1;
+        // Range: [1, 20]
+        // for(int i = 0; i < 10000; i++) {
+        //     int roll = (int)(Math.random() * 20) + 1;
+        //     if(roll > 20 || roll < 1) {
+        //         System.out.println("The range is incorrect!");
+        //     }
+        // }
+
         // Ascii.drawD20(roll);
 
         // TODO Continue ...
