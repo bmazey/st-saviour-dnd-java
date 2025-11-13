@@ -20,37 +20,8 @@ public class Game {
         printDramaticText("Welcome " + player.name + " the " + player.role + " to Bludgeons & Flagons!");
         printDramaticText("Our adventure begins in a shady tavern ...");
 
-        System.out.print("Press A to roll with advantage or press Enter to roll a D20. ");
-        String option = scanner.nextLine();
-        if(option.toLowerCase().equals("a")) {
-            int roll = Player.rollAdvantage();
-            printDramaticText(player.name + " rolled a " + roll + ".");
-        } else {
-            int roll = Player.rollD20();
-            printDramaticText(player.name + " rolled a " + roll + ".");
-        }
-
-        // Player player1 = new Player("Everett", "Wizard");
-        // player1.attack();
-
-        // System.out.println("Your name is " + name + " and your role is " + role + ".");
-        
-        // Start the adventure.
-        // printDramaticText("Our adventure begins in a shady tavern ...");
-
-        // Roll a d20
-        // System.out.print("Press Enter to roll a d20.");
-        // scanner.nextLine();
-
-        // Range: [1, 20]
-        // for(int i = 0; i < 10000; i++) {
-        //     int roll = (int)(Math.random() * 20) + 1;
-        //     if(roll > 20 || roll < 1) {
-        //         System.out.println("The range is incorrect!");
-        //     }
-        // }
-
-        // Ascii.drawD20(roll);
+        String answer = TimedInput.getUserInputWithTimeout(10);
+        printDramaticText("You entered " + answer + " in time!");
 
         // TODO Continue ...
     }
