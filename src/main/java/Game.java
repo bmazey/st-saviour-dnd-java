@@ -12,25 +12,34 @@ public class Game {
         System.out.print("Name: ");
         String name = scanner.nextLine();
 
-        // Collect character role from user.
-        System.out.print("Role: ");
-        String role = scanner.nextLine();
+        // TODO instantiate Player
 
-        System.out.println("Your name is " + name + " and your role is " + role + ".");
-        
-        // TODO Create character by collecting user input (name + role.
+        int r = (int)(Math.random() * 100) + 1;
+        int guesses = 1;
 
-        // TODO Print character sheet.
+        printDramaticText("Welcome " + name + " to my trivia game!");
+        printDramaticText("I am thinking of a number between 1 and 100. Can you guess what it is?");
+        String input = scanner.nextLine();
 
-        // Start the adventure.
-        printDramaticText("Our adventure begins in a shady tavern ...");
+        int guess = Integer.parseInt(input);
 
-        // Roll a d20
-        System.out.print("Press Enter to roll a d20.");
-        scanner.nextLine();
+        while(guess != r) {
+            if(guess < r) {
+                printDramaticText("The number I am thinking of is higher than " + guess + " ");
+            
+            } else {
+               printDramaticText("The number I am thinking of is lower than " + guess + " "); 
+            }
+            System.out.println("Try again: ");
+            input = scanner.nextLine();
+            guess = Integer.parseInt(input);
+            guesses++;
+        }
 
-        int roll = (int)(Math.random() * 20) + 1;
-        Ascii.drawD20(roll);
+        printDramaticText("Congratualations " + name + " you guessed the right number!");
+        printDramaticText("The number I was thinking of was " + r + ", it took you " + guesses + " guesses!");
+
+
 
         // TODO Continue ...
     }
