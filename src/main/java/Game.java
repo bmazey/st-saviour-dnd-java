@@ -1,43 +1,102 @@
+import java.io.Console;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 public class Game {
 
     public static void main(String[] args) {
+        Scanner console = new Scanner(System.in);
+        printDramaticText("ESCAPE THE MR. MAZEY — LABUBU OBBY! #OhNoGottaGoSaidOhNoGottaGo 🏃");
 
-        // Create Scanner for collecting user input.
-        Scanner scanner = new Scanner(System.in);
+        // User input.
+        printDramaticText("Name: ");
+        String name = console.nextLine();
 
-        // Collect character name from user.
-        System.out.print("Name: ");
-        String name = scanner.nextLine();
+        printDramaticText("Choose your character #NotCopywrited: ");
+        String role = console.nextLine();
 
-        // Collect character role from user.
-        System.out.print("Role: ");
-        String role = scanner.nextLine();
+        printDramaticText("Choose your skill #'s: ");
+        printDramaticText("Jump: to jump across the obstacles (1-20): ");
+        int jump = console.nextInt();
 
-        System.out.println("Your name is " + name + " and your role is " + role + ".");
-        
-        // TODO Create character by collecting user input (name + role.
+        printDramaticText("Courage: to have the courage to confront Mr. Mazey (1-20): ");
+        int courage = console.nextInt();
 
-        // TODO Print character sheet.
+        printDramaticText("Luck: to have the luck to escape with the Labubu (1-20): ");
+        int luck = console.nextInt();
 
-        // Start the adventure.
-        printDramaticText("Our adventure begins in a shady tavern ...");
+        Player player = new Player(name, role, jump, courage, luck);
 
-        // Roll a d20
-        System.out.print("Press Enter to roll a d20.");
-        scanner.nextLine();
+        // The game itself.
+        printDramaticText("You steal the ultra rare Labubu plush from the The #ItsGiving5Energy Classroom...");
+        printDramaticText("Oh no... Mr. Mazey spots you!");
+        printDramaticText("HEY! STOP RIGHT THERE!");
+        printDramaticText("Your Escaping the Mr. Mazey Labubu Obby begins!");
 
-        int roll = (int)(Math.random() * 20) + 1;
-        Ascii.drawD20(roll);
+        // Obstacle #1.
+        printDramaticText("OBSTACLE 1: The Floor is Kombucha!");
+        printDramaticText("Press 'A' to roll with advantage or press 'Enter' for a normal roll: ");
+        String option = console.nextLine();
 
-        // TODO Continue ...
+        int roll;
+        if(option.toLowerCase().equals("a")) {
+            roll = Player.rollAdvantage();
+        } else {
+            roll = Player.rollD20();
+        }
+
+        printDramaticText(player.name + " rolled a " + roll + ".");
+
+        if(roll + player.jump >= 15) {
+            printDramaticText("You leap across the Kombucha like a pro!");
+            printDramaticText("Press 'A' to roll with advantage or press 'Enter' for a normal roll: ");
+        } else {
+            printDramaticText("Oh no! You slip on a Kombucha platform! Mr. Mazey gets closer! #TooFermented.");
+        }
+
+        // Obstacle #2.
+        printDramaticText("OBSTACLE 2: Carrot Speed Pads Ahead!");
+        printDramaticText("Press 'A' to roll with advantage or press 'Enter' for a normal roll: ");
+        console.nextLine();
+
+        roll = Player.rollD20();
+        if(roll + player.luck >= 15) {
+            printDramaticText("Zoom! You launch forward on the carrot at LIGHT SPEED!");
+        } else {
+            printDramaticText("You trip over the carrot speed pad... #Embarrassing.");
+        }
+
+        // Obstacle #3.
+        printDramaticText("OBSTACLE 3: September Quiz that apparently takes place in October!");
+        printDramaticText("Press 'A' to roll with advantage or press 'Enter' for a normal roll: ");
+        console.nextLine();
+
+        roll = Player.rollD20();
+        if(roll + player.luck >= 16) {
+            printDramaticText("You pass the quiz and unlock the door!");
+        } else {
+            printDramaticText("You fail the quiz! #1Energy.");
+        }
+
+        // Obstacle #4 (Final).
+        printDramaticText("OBSTACLE 4 (FINAL): ESCAPE WITH LABUBU! + Make sure you take a computer charger before you leave!");
+        printDramaticText("Press 'A' to roll with advantage or press 'Enter' for a normal roll: ");
+        console.nextLine();
+
+        roll = Player.rollD20();
+        if(roll + player.courage >= 18) {
+            printDramaticText("YOU ESCAPED WITH THE LABUBU! and you got a free computer charger :)");
+        } else {
+            printDramaticText("GAME OVER! Mr. Mazey catches you...and you get a detention :(");
+        }
+
+        printDramaticText("Thanks for playing! Thank you to our sponsors: Kombucha, Carrots, September Quiz that apparently takes place in October, Free Computer Chargers, and Labubu's!");
+        console.close();
     }
         
     public static void printDramaticText(String text) {
         // Delay in milliseconds
-        int delay = 100;
+        int delay = 80;
 
         for (char c : text.toCharArray()) {
             System.out.print(c);
