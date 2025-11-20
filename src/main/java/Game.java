@@ -15,7 +15,7 @@ public class Game {
         printDramaticText("Choose your character #NotCopywrited: ");
         String role = console.nextLine();
 
-        printDramaticText("Choose your skill #'s: ");
+        printDramaticText("Choose your skills #Carrots #MindFlayers: ");
         printDramaticText("Jump: to jump across the obstacles (1-20): ");
         int jump = console.nextInt();
 
