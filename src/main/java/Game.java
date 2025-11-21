@@ -9,20 +9,20 @@ public class Game {
         printDramaticText("ESCAPE THE MR. MAZEY — LABUBU OBBY! #OhNoGottaGoSaidOhNoGottaGo 🏃");
 
         // User input.
-        printDramaticText("Name: ");
+        printDramaticText("---- Name ---- ");
         String name = console.nextLine();
 
-        printDramaticText("Choose your character #NotCopywrited: ");
+        printDramaticText("---- Choose your character #NotCopywrited ----");
         String role = console.nextLine();
 
-        printDramaticText("Choose your skills #Carrots #MindFlayers: ");
-        printDramaticText("Jump: to jump across the obstacles (1-20): ");
+        printDramaticText("---- Choose your skills #Carrots #MindFlayers ---- ");
+        printDramaticText("---- Jump: to jump across the obstacles (1-20) ---- ");
         int jump = console.nextInt();
 
-        printDramaticText("Courage: to have the courage to confront Mr. Mazey (1-20): ");
+        printDramaticText("---- Courage: to have the courage to confront Mr. Mazey (1-20) ---- ");
         int courage = console.nextInt();
 
-        printDramaticText("Luck: to have the luck to escape with the Labubu (1-20): ");
+        printDramaticText("---- Luck: to have the luck to escape with the Labubu (1-20) ---- ");
         int luck = console.nextInt();
 
         Player player = new Player(name, role, jump, courage, luck);
@@ -49,7 +49,6 @@ public class Game {
 
         if(roll + player.jump >= 15) {
             printDramaticText("You leap across the Kombucha like a pro!");
-            printDramaticText("Press 'A' to roll with advantage or press 'Enter' for a normal roll: ");
         } else {
             printDramaticText("Oh no! You slip on a Kombucha platform! Mr. Mazey gets closer! #TooFermented.");
         }
