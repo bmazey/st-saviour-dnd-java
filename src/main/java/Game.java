@@ -4,7 +4,7 @@ import java.util.concurrent.TimeUnit;
 public class Game {
 
     public static void main(String[] args) {
-
+    
         // Create Scanner for collecting user input.
         Scanner scanner = new Scanner(System.in);
 
@@ -12,9 +12,7 @@ public class Game {
         System.out.print("Name: ");
         String name = scanner.nextLine();
 
-        // TODO instantiate Player
-
-        int r = (int)(Math.random() * 100) + 1;
+        int r = (int)(Math.random() * 100) + 1;// make the random number
         int guesses = 1;
 
         printDramaticText("Welcome " + name + " to my trivia game!");
@@ -41,8 +39,22 @@ public class Game {
 
 
 
-        // TODO Continue ...
+      printDramaticText("But wait... a wild monster appears!");
+
+    int difficulty = generateMonster();//find the number needed to defeat the monster
+
+    printDramaticText("Roll a 20-sided die (1-20). Press enter to roll.");// Rolls a 20-sided die and returns the result
+    scanner.nextLine();
+
+    int roll = (int)(Math.random() * 20) + 1;
+    printDramaticText("You rolled a " + roll + "!");
+
+    if (roll >= difficulty) {
+        printDramaticText("You defeated the monster! ");
+    } else {
+        printDramaticText("The monster overpowered you...Game over.");
     }
+}
         
     public static void printDramaticText(String text) {
         // Delay in milliseconds
