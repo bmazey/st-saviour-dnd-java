@@ -5,23 +5,17 @@ public class Game {
 
     public static void main(String[] args) {
 
-        // Create Scanner for collecting user input.
-        Scanner scanner = new Scanner(System.in);
+        Dog firstDog = new Dog("Bluey", "Blue Heeler");
+        firstDog.bark();
 
-        // Collect character name from user.
-        System.out.print("Name: ");
-        String name = scanner.nextLine();
+        Dog secondDog = new Dog("Lassie", "Collie");
+        secondDog.bark();
 
-        // Collect character role from user.
-        System.out.print("Role: ");
-        String role = scanner.nextLine();
+        System.out.println(secondDog.name + " has " + secondDog.legs + " legs.");
+        secondDog.terribleAccident();
+        System.out.println(secondDog.name + " has " + secondDog.legs + " legs.");
 
-        Player player = new Player(name, role);
-        printDramaticText("Welcome " + player.name + " the " + player.role + " to Bludgeons & Flagons!");
-        printDramaticText("Our adventure begins in a shady tavern ...");
-
-        String answer = TimedInput.getUserInputWithTimeout(10);
-        printDramaticText("You entered " + answer + " in time!");
+        System.out.println(firstDog.name + " has " + firstDog.legs + " legs.");
 
         // TODO Continue ...
     }
